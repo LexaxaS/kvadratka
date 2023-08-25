@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
-#include "../include/quadratic.h"
-#include "../include/tools.h"
-#include "../include/tester.h"
+#include "quadratic.h"
+#include "tools.h"
+#include "tester.h"
 // *argv;../tests/test.txt
 //int argc, char *argv[]
 
@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
         }
     else
         {
-        printf("Enter 3 numbers\n");
         double roots[2] = {0};
         double a = 0, b = 0, c = 0;
         inPut(&a, &b, &c);

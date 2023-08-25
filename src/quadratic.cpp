@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
-#include "../include/quadratic.h"
-#include "../include/tools.h"
-#include "../include/tester.h"
+#include "quadratic.h"
+#include "tools.h"
+#include "tester.h"
 // *argv;../tests/test.txt
 //int argc, char *argv[]
 
@@ -57,6 +57,7 @@ int solveQuadratic(double a, double b, double c, double *roots)
     {
         double x1 = -b / 2.0;
         *roots = x1;
+        *(roots + 1) = NAN;
         return ONE_SOL;
     }
 
@@ -72,8 +73,9 @@ int linearSolver(double b, double c, double *roots)
 
     if (!isZero(b))
     {
-        *roots = -c / b ;
-        return ONE_SOL   ;
+        *roots = -c / b;
+        *(roots + 1) = NAN;
+        return ONE_SOL;
     }
 
     else
@@ -87,6 +89,7 @@ int linearSolver(double b, double c, double *roots)
 
 void inPut(double *a, double *b, double *c)
 {
+    printf("Enter 3 numbers\n");
     while (scanf("%lf %lf %lf", a, b, c) != 3 || getchar() != '\n')
     {
         bufClear();
@@ -114,7 +117,7 @@ void ansOut(int nRoots, double *roots)
             printf("\nThe solutions are all real numbers\n\n");
             break;
         default:
-            printf("main():ERROR: nRoots = %d\n\n", nRoots);
+            printf("ERROR: nRoots = %d\n\n", nRoots);
     }
 }
 

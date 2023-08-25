@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "../include/tools.h"
+#include "tools.h"
 
 void bufClear(void)
 {
