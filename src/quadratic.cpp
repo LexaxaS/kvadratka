@@ -57,7 +57,6 @@ int solveQuadratic(double a, double b, double c, double *roots)
     {
         double x1 = -b / 2.0;
         *roots = x1;
-        *(roots + 1) = NAN;
         return ONE_SOL;
     }
 
@@ -74,7 +73,6 @@ int linearSolver(double b, double c, double *roots)
     if (!isZero(b))
     {
         *roots = -c / b;
-        *(roots + 1) = NAN;
         return ONE_SOL;
     }
 
